@@ -83,3 +83,9 @@ python launch.py --precision full --no-half --medvram
 sudo apt install exfat-fuse
 sudo apt install ntfs-3g
 ```
+
+## Running Auto1111 with low memory
+
+```
+PYTORCH_HIP_ALLOC_CONF=garbage_collection_threshold:0.9,max_split_size_mb:512 python launch.py --precision full --no-half
+```
