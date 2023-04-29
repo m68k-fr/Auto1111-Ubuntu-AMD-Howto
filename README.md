@@ -67,6 +67,19 @@ python -m venv venv
 source venv/bin/activate
 python -m pip install --upgrade pip wheel
 pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/rocm5.4.2
-python launch.py --precision full --no-half
 ```
 
+## Running Auto1111
+
+```
+cd stable-diffusion-webui
+source venv/bin/activate
+python launch.py --precision full --no-half --medvram
+```
+
+## If External NTFS drives are not mounting properly
+
+```
+sudo apt install exfat-fuse
+sudo apt install ntfs-3g
+```
