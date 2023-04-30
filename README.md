@@ -77,41 +77,31 @@ source venv/bin/activate
 python launch.py --precision full --no-half --medvram
 ```
 
-## If External NTFS drives are not mounting properly
+## Running on low VRAM
+
+```
+cd stable-diffusion-webui
+source venv/bin/activate
+PYTORCH_HIP_ALLOC_CONF=garbage_collection_threshold:0.9,max_split_size_mb:512 python launch.py --precision full --no-half
+```
+
+## Running on RX6000 Series
+
+```
+cd stable-diffusion-webui
+source venv/bin/activate
+python launch.py --medvram
+
+```
+--precision full & --no-half are not needed on series 6000, and will save a lot of VRAM.  
+If you don't generate big images, you can also skip the -medvram.
+
+
+## Note on external NTFS drives
+
+If external NTFS drives are not mounting properly:
 
 ```
 sudo apt install exfat-fuse
 sudo apt install ntfs-3g
 ```
-
-## Running on low VRAM
-
-```
-PYTORCH_HIP_ALLOC_CONF=garbage_collection_threshold:0.9,max_split_size_mb:512 python launch.py --precision full --no-half
-```
-
-## Running on RX6800XT
-
-```
-PYTORCH_HIP_ALLOC_CONF=garbage_collection_threshold:0.9,max_split_size_mb:512 python launch.py
-
-100%|██████████████████████████████████████████████████████████████| 35/35 [00:06<00:00,  5.08it/s]
-100%|██████████████████████████████████████████████████████████████| 35/35 [01:12<00:00,  2.08s/it]
-Total progress: 100%|██████████████████████████████████████████████| 70/70 [01:21<00:00,  1.16s/it]
-Total progress: 100%|██████████████████████████████████████████████| 70/70 [01:21<00:00,  2.09s/it]
-Time taken: 1m 21.29s
-Torch active/reserved: 11682/15814 MiB, Sys VRAM: 15878/16368 MiB (97.01%)
-```
-
-```
-python launch.py --medvram
-
-100%|██████████████████████████████████████████████████████████████| 35/35 [00:08<00:00,  4.23it/s]
-100%|██████████████████████████████████████████████████████████████| 35/35 [01:03<00:00,  1.82s/it]
-Total progress: 100%|██████████████████████████████████████████████| 70/70 [01:14<00:00,  1.06s/it]
-Total progress: 100%|██████████████████████████████████████████████| 70/70 [01:14<00:00,  1.82s/it]
-Time taken: 1m 14.18s
-Torch active/reserved: 11072/15676 MiB, Sys VRAM: 15740/16368 MiB (96.16%)
-```
-
-
