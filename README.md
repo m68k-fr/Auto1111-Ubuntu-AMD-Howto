@@ -1,4 +1,4 @@
-# Install guide to Automatic1111 & Shark on Ubuntu with AMD gpus
+# Install guide to Automatic1111 on Ubuntu with AMD gpus
 
 ## Install Ubuntu 22.04 LTS from a USB Key
 * standard intall. (no third party proprietary repositories)
