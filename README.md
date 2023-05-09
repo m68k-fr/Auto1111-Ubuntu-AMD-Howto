@@ -66,7 +66,7 @@ cd stable-diffusion-webui
 python -m venv venv
 source venv/bin/activate
 python -m pip install --upgrade pip wheel
-pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/rocm5.4.2
+pip3 install torch torchvision --index-url https://download.pytorch.org/whl/rocm5.4.2
 ```
 
 ## Running Auto1111
