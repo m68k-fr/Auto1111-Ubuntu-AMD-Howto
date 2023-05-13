@@ -61,6 +61,7 @@ Add **alias python=python3** at the end of your .bashrc file, save and close.
 
 Restart the terminal.
 ```
+cd ~
 git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui
 cd stable-diffusion-webui
 python -m venv venv
