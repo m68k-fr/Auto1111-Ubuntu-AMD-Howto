@@ -112,7 +112,7 @@ sudo apt install ntfs-3g
 sudo amdgpu-install --rocmrelease=all --uninstall
 wget http://repo.radeon.com/amdgpu-install/.5.6/ubuntu/jammy/amdgpu-install_5.6.50600-1_all.deb
 sudo dpkg -i amdgpu-install_5.6.50600-1_all.deb
-cd /etc/apt/source.list.d/
+cd /etc/apt/sources.list.d/
 sudo nano amdgpu.list
 # change 5.6 to .5.6
 sudo nano rocm.list
