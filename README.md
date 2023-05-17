@@ -106,3 +106,18 @@ If external NTFS drives are not mounting properly:
 sudo apt install exfat-fuse
 sudo apt install ntfs-3g
 ```
+
+## Upgrade to hidden ROCm 5.6
+```
+sudo amdgpu-install --uninstall
+wget http://repo.radeon.com/amdgpu-install/.5.6/ubuntu/jammy/amdgpu-install_5.6.50600-1_all.deb
+sudo pdkg -i amdgpu-install_5.6.50600-1_all.deb
+cd /etc/apt/source.list.d/
+sudo nano amdgpu.list
+# change 5.6 to .5.6
+sudo nano rocm.list
+# change 5.6 to .apt_5.6
+sudo amdgpu-install --usecase=rocm,rocmdev,rocmdevtools,lrt,hip,hiplibsdk,mllib,mlsdk --no-32
+# Manual patch for compiling torch
+sudo cp /opt/rocm-5.6.0/include/rccl/rccl.h /opt/rocm-5.6.0/include/rccl.h
+```
