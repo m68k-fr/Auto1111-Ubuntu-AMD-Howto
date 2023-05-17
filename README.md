@@ -109,7 +109,7 @@ sudo apt install ntfs-3g
 
 ## Upgrade to hidden ROCm 5.6
 ```
-sudo amdgpu-install --uninstall
+sudo amdgpu-install --rocmrelease=all --uninstall
 wget http://repo.radeon.com/amdgpu-install/.5.6/ubuntu/jammy/amdgpu-install_5.6.50600-1_all.deb
 sudo pdkg -i amdgpu-install_5.6.50600-1_all.deb
 cd /etc/apt/source.list.d/
