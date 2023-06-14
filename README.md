@@ -22,7 +22,7 @@ sudo apt-get install ./amdgpu-install_5.4.50403-1_all.deb
 Needed Prerequisites for ROCm:  
 https://docs.amd.com/bundle/ROCm-Installation-Guide-v5.4/page/Introduction_to_ROCm_Installation_Guide_for_Linux.html
 ```
-sudo apt-get install wget gnupg2 gawk curl
+sudo apt-get install gnupg2 gawk curl
 sudo usermod -a -G render $LOGNAME
 sudo usermod -a -G video $LOGNAME
 ```
