@@ -92,12 +92,17 @@ PYTORCH_HIP_ALLOC_CONF=garbage_collection_threshold:0.9,max_split_size_mb:512 py
 ```
 cd stable-diffusion-webui
 source venv/bin/activate
-python launch.py --no-half-vae
-
+PYTORCH_HIP_ALLOC_CONF=max_split_size_mb:4096 python launch.py --no-half-vae
 ```
 --precision full & --no-half are not needed on series 6000, and will save a lot of VRAM.  
 If you don't generate big images, you can also skip the -medvram.
 Pleasde note, first time generating an image could take some time.
+
+## Recommended Auto1111 extensions and  settings
+
+* Extensions: sd-web-ui-kitchen-theme, a1111-sd-webui-lycoris
+* Settings: Live previews / Show live previews of the created image: off
+* Settings: User interface / Quicksettings list: Add **sd_vae** and **CLIP_stop_at_last_layers**
 
 
 ## Note on external NTFS drives
