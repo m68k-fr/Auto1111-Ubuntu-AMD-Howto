@@ -92,11 +92,12 @@ PYTORCH_HIP_ALLOC_CONF=garbage_collection_threshold:0.9,max_split_size_mb:512 py
 ```
 cd stable-diffusion-webui
 source venv/bin/activate
-python launch.py --medvram
+python launch.py --no-half-vae
 
 ```
 --precision full & --no-half are not needed on series 6000, and will save a lot of VRAM.  
 If you don't generate big images, you can also skip the -medvram.
+Pleasde note, first time generating an image could take some time.
 
 
 ## Note on external NTFS drives
@@ -105,7 +106,6 @@ If external NTFS drives are not mounting properly:
 
 ```
 sudo apt install exfat-fuse
-sudo apt install ntfs-3g
 ```
 
 ## Upgrade to hidden ROCm 5.6
