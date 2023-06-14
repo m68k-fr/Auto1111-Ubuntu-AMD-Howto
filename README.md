@@ -52,14 +52,15 @@ vulkaninfo --summary
 
 ```
 sudo apt-get install git
-sudo apt-get install python3
 sudo apt install python3.10-venv
 sudo apt-get install libstdc++-12-dev
-vim ~/.bashrc
 ```
+Edit the file **~/.bashrc**
 Add **alias python=python3** at the end of your .bashrc file, save and close.
+```
+source ~/.bashrc
+```
 
-Restart the terminal.
 ```
 cd ~
 git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui
