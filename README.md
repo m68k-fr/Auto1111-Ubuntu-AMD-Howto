@@ -13,10 +13,10 @@ Reboot.
 
 ## Install AMD drivers
 
-Download **amdgpu-install_5.4.50403-1_all.deb Radeon™ Software for Linux® version 22.40.3** for Ubuntu 22.04.2 from:  
+Download **amdgpu-install_5.4.50406-1_all.deb Radeon™ Software for Linux® version 22.40.3** for Ubuntu 22.04.2 from:  
 https://www.amd.com/fr/support/linux-drivers
 ```
-sudo apt-get install ./amdgpu-install_5.4.50403-1_all.deb
+sudo apt-get install ./amdgpu-install_5.4.50406-1_all.deb
 ```
 
 Needed Prerequisites for ROCm:  
@@ -29,15 +29,15 @@ sudo usermod -a -G video $LOGNAME
 
 Install drivers:
 ```
-sudo amdgpu-install --rocmrelease=5.4.3 --usecase=rocm,rocmdev,rocmdevtools,lrt,hip,hiplibsdk,mllib,mlsdk --vulkan=pro --no-32 --accept-eula
+sudo amdgpu-install --rocmrelease=5.4.6 --usecase=rocm,rocmdev,rocmdevtools,lrt,hip,hiplibsdk,mllib,mlsdk --vulkan=pro --no-32 --accept-eula
 ```
+
+Reboot.
 
 Check your ROCm info, your AMD gpu should be listed:
 ```
 rocminfo
 ```
-
-Reboot.
 
 ## Install Vulkan SDK
 ```
