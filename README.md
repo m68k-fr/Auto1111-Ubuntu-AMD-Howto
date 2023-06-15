@@ -55,7 +55,7 @@ sudo apt-get install git
 sudo apt install python3.10-venv
 sudo apt-get install libstdc++-12-dev
 ```
-Edit the file **~/.bashrc**
+Edit the **~/.bashrc** file:  
 Add **alias python=python3** at the end of your .bashrc file, save and close.
 ```
 source ~/.bashrc
@@ -115,7 +115,7 @@ sudo apt install exfat-fuse
 
 ## Upgrade to the hidden ROCm 5.6 (optional)
 
-A hidden repo for the upcoming ROCm version is available, even if nothing was announced or made public.
+A hidden repo for the upcoming ROCm version is available, even if nothing was announced or made public.  
 Only recommanded if you're not afraid of beta testing!
 
 ```
