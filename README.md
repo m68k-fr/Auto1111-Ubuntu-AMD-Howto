@@ -129,3 +129,7 @@ sudo nano rocm.list
 # change 5.6 to .apt_5.6
 sudo amdgpu-install --usecase=rocm,rocmdev,rocmdevtools,lrt,hip,hiplibsdk,mllib,mlsdk --no-32
 ```
+Even if keeping pytorch and torch vision for ROCm5.4.2 should work with ROCm5.6, it's highly recommended to compile them from source.  
+Follow this guide for further instructions: [Compiling-Pytorch-for-ROCm](https://github.com/m68k-fr/Compiling-Pytorch-for-ROCm/)
+
+
