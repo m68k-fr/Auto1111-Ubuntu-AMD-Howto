@@ -1,6 +1,6 @@
 # Install guide to Automatic1111 on Ubuntu with AMD gpus
 
-## Install Ubuntu 22.04 LTS from a USB Key
+## Install Ubuntu 22.04.02 LTS from a USB Key
 * standard intall. (no third party proprietary repositories)
 
 ## Update Ubuntu
@@ -39,7 +39,7 @@ Check your ROCm info, your AMD gpu should be listed:
 rocminfo
 ```
 
-## Install Vulkan SDK
+## Install Vulkan tools
 ```
 sudo apt install vulkan-tools
 ```
@@ -92,28 +92,32 @@ PYTORCH_HIP_ALLOC_CONF=garbage_collection_threshold:0.9,max_split_size_mb:512 py
 ```
 cd stable-diffusion-webui
 source venv/bin/activate
-PYTORCH_HIP_ALLOC_CONF=max_split_size_mb:4096 python launch.py --no-half-vae
+python launch.py
 ```
 --precision full & --no-half are not needed on series 6000, and will save a lot of VRAM.  
 If you don't generate big images, you can also skip the -medvram.
 Pleasde note, first time generating an image could take some time.
 
-## Recommended Auto1111 extensions and  settings
+## Recommended Auto1111 extensions and settings
 
-* Extensions: sd-web-ui-kitchen-theme, a1111-sd-webui-lycoris
-* Settings: Live previews / Show live previews of the created image: off
-* Settings: User interface / Quicksettings list: Add **sd_vae** and **CLIP_stop_at_last_layers**
+* Recommended extensions: sd-web-ui-kitchen-theme, a1111-sd-webui-lycoris
+* Recommended Setting: Live previews / Show live previews of the created image: off
+* Recommended Setting: User interface / Quicksettings list: Add **sd_vae** and **CLIP_stop_at_last_layers**
 
 
-## Note on external NTFS drives
+## Note regarding external NTFS drives
 
-If external NTFS drives are not mounting properly:
+If your external NTFS drives (windows) are not mounting properly:
 
 ```
 sudo apt install exfat-fuse
 ```
 
-## Upgrade to hidden ROCm 5.6
+## Upgrade to the hidden ROCm 5.6 (optional)
+
+A hidden repo for the upcoming ROCm version is available, even if nothing was announced or made public.
+Only recommanded if you're not afraid of beta testing!
+
 ```
 sudo amdgpu-install --rocmrelease=all --uninstall
 wget http://repo.radeon.com/amdgpu-install/.5.6/ubuntu/jammy/amdgpu-install_5.6.50600-1_all.deb
