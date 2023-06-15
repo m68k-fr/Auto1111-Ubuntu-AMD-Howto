@@ -124,6 +124,4 @@ sudo nano amdgpu.list
 sudo nano rocm.list
 # change 5.6 to .apt_5.6
 sudo amdgpu-install --usecase=rocm,rocmdev,rocmdevtools,lrt,hip,hiplibsdk,mllib,mlsdk --no-32
-# Manual patch for compiling torch
-sudo cp /opt/rocm-5.6.0/include/rccl/rccl.h /opt/rocm-5.6.0/include/rccl.h
 ```
