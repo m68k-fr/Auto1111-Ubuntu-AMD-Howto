@@ -70,6 +70,11 @@ source venv/bin/activate
 python -m pip install --upgrade pip wheel
 pip install torch torchvision --index-url https://download.pytorch.org/whl/rocm5.4.2
 ```
+At the time beeing, pytorch for ROCm5.5 is not officially released, but a nightly version is available.  
+If you want to install the 5.5 version, just replace the last line by this one:
+```
+pip install torch torchvision --index-url https://download.pytorch.org/whl/nightly/rocm5.5
+```
 
 ## Running Auto1111
 
